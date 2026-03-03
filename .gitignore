@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.cursor/
+.vscode/
+*.swp
+*.swo
+
+# Environment / secrets
+.env
+.env.local
+
+# Node (for future dashboard)
+node_modules/
+dist/
+
+# Data files (don't commit real student data)
+*.csv
+*.xlsx
