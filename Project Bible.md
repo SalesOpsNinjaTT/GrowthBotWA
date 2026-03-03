@@ -38,7 +38,7 @@ Airtable Setup:
 
 Create a Base: "Student Recovery Data."
 
-Columns: Date, Phone, Name, Drop-off Reason, Feedback Text, Status.
+Columns: Date, Phone, Name, Rebooked (Yes/No), Decline Reason (free text), Status.
 
 Typebot Connection:
 
@@ -51,15 +51,13 @@ Goal: Design a chat that doesn't feel like a "bot."
 
 The Hook: Create a WhatsApp Template in Meta Manager.
 
-Draft: "Hi {{1}}, this is the TripleTen team. We noticed you started the application but didn't finish. Was it a tech issue, or just not the right time?"
+Draft: "Hi {{1}}, this is the TripleTen team. We noticed your booking didn't happen. Would you like to rebook?"
 
 The Branching Logic:
 
-If "Price" -> Tag as 'Price Sensitive' -> Ask if they want a scholarship brochure.
+If "Yes, rebook" -> Send calendar booking link -> Tag as 'Rebooked' -> End.
 
-If "Time" -> Tag as 'Future Lead' -> Ask when a better month would be.
-
-If "Other" -> Open text input for feedback.
+If "No thanks" -> Ask: "No problem! Could you share why it didn't work out?" -> Free text input -> Save reason to Airtable -> Tag as 'Declined' -> End.
 
 📊 PHASE 3: THE INSIGHTS (The "Founder Dashboard")
 Goal: Use "Vibe-Coding" to visualize the data.
